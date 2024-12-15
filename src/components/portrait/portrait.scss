@@ -1,0 +1,168 @@
+.portrait {
+  position: relative;
+  min-height: 16rem;
+  width: 16rem;
+  border-radius: 50%;
+
+  &__status {
+    position: absolute;
+    background-color: #ffffff;
+    height: 2.75rem;
+    max-width: 3rem;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 20px;
+    left: -8px;
+    display: flex;
+    border: none;
+    text-align: center;
+    border: 2px solid rgb(199, 240, 234);
+    box-shadow: inset 0 0 10px black;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 500;
+
+    &--life {
+      top: 1rem;
+      left: 8px;
+      background-color: rgb(168, 8, 3);
+    }
+    &--sanity {
+      background-color: rgb(3, 168, 105);
+      left: -6px;
+      top: 4.5rem;
+    }
+    &--mana {
+      background-color: rgb(3, 88, 168);
+      top: 8rem;
+    }
+    &--shield {
+      top: 0.3rem;
+      background-image: url(../../assets/filled-shield.svg);
+      box-shadow: none;
+      background-position: center;
+      background-size: contain;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      border: none;
+      color: black;
+      font-size: 0.9rem;
+      height: 1.5rem;
+      width: 1.5rem;
+      left: 2.2rem;
+    }
+  }
+
+  &__name {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    width: 85%;
+    z-index: +2;
+    background-color: rgb(170, 0, 0);
+    padding: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: inset 0 0 5px black;
+    background-image: repeating-linear-gradient(
+        15deg,
+        transparent,
+        #fff 0px,
+        transparent 30px,
+        transparent 30px,
+        #ffffff 60px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        black,
+        #ffffff 0px,
+        transparent 30px,
+        transparent 30px,
+        #ffffff 60px
+      ),
+      repeating-linear-gradient(
+        120deg,
+        #ffffff,
+        #ffffff 0px,
+        transparent 30px,
+        transparent 30px,
+        #ffffff 60px
+      ),
+      repeating-linear-gradient(
+        340deg,
+        #ffffff,
+        #ffffff 0px,
+        transparent 30px,
+        transparent 30px,
+        #ffffff 60px
+      );
+    background-size: 1px calc(100% + 120px), calc(100% + 120px) 1px, 1px calc(100% + 120px),
+      calc(100% + 120px) 1px;
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    animation: borderAnimation 20s infinite alternate-reverse;
+
+    &__text {
+      padding: 0 1rem;
+    }
+    &__icon {
+      position: absolute;
+      right: 0rem;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+  }
+
+  @keyframes borderAnimation {
+    from {
+      background-position: 0 0, -120px 0, 100% -120px, 0 100%;
+    }
+    to {
+      background-position: 0 -120px, 0 0, 100% 0, -120px 100%;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    border-radius: 50%;
+    border: 3px groove rgb(199, 240, 234);
+    outline: 1px solid rgba(255, 255, 255, 0.479);
+    outline-offset: -10px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &--upload {
+    cursor: pointer;
+    background-color: rgba(36, 36, 36, 0.781);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+  }
+
+  &__fileArea {
+    user-select: none;
+    font-size: 1.125rem;
+    display: flex;
+    gap: 8px;
+    border-radius: 50%;
+    border: 4px dashed rgb(0, 0, 0);
+    height: 100%;
+    padding: 2rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0.7;
+    &__fileUploader {
+      display: none;
+    }
+  }
+}
